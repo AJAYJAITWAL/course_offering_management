@@ -1,4 +1,4 @@
-# Movie Ticket Booking System
+# Course offering management
 
 This is a Ruby on Rails application for managing movie ticket bookings.
 
