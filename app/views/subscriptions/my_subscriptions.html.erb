@@ -1,0 +1,7 @@
+<div id="courses", class="row d-flex">
+  <% @my_subscriptions.each do |course| %>
+    <div class="col-3 mt-4">
+      <%= render course %>
+    </div>
+  <% end %>
+</div>

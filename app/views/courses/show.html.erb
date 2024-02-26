@@ -1,0 +1,24 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @course %>
+
+<% if current_user.instructor? or current_user.admin? %>
+  <div class="my-3">
+    <h2>Users list</h2>
+    <ul>
+      <% @course.users.each do |user| %>
+        <li><%= user.name %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div>
+  <%= link_to "Back to courses", courses_path %>
+   <% if can? :manage, Course %>
+    <%= link_to "Edit this course", edit_course_path(@course) %> |
+
+    <%= button_to "Destroy this course", @course, method: :delete %>
+  <% end %>
+</div>
+

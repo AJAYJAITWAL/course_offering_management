@@ -8,6 +8,12 @@ class User < ApplicationRecord
 
   after_initialize :set_default_role, if: :new_record?
 
+  scope :instructors, -> { where(:role => "instructor")}
+
+  has_many :subscriptions, dependent: :destroy
+  has_many :courses, through: :subscriptions, dependent: :destroy
+  has_many :instructor_courses, class_name: "Course", foreign_key: :instructor_id, dependent: :destroy
+
   private
 
   def set_default_role

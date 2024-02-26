@@ -1,0 +1,17 @@
+<p style="color: green"><%= notice %></p>
+
+<div class="container">
+  <h1>Courses</h1>
+
+  <% if can? :manage, Course %>
+    <%= link_to "New course", new_course_path, class: "btn btn-primary my-4" %>
+  <% end %>
+
+  <div id="courses", class="row d-flex">
+    <% @courses.each do |course| %>
+      <div class="col-3 mt-4">
+        <%= render course %>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyText
+  instructor_id: 1
+  duration: 9.99
+  price: 9.99
+  start_date: 2024-02-26
+  end_date: 2024-02-26
+  course_type: MyString
+
+two:
+  title: MyString
+  description: MyText
+  instructor_id: 1
+  duration: 9.99
+  price: 9.99
+  start_date: 2024-02-26
+  end_date: 2024-02-26
+  course_type: MyString

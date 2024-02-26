@@ -1,0 +1,51 @@
+
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <div id="<%= dom_id course %>">
+      <p>
+        <strong>Title:</strong>
+        <%= link_to course.title, course_path(course), class: "card-link text-decoration-none" %>
+      </p>
+
+      <p>
+        <strong>Description:</strong>
+        <%= course.description %>
+      </p>
+
+      <p>
+        <strong>Instructor:</strong>
+        <%= course.instructor.name %>
+      </p>
+
+      <p>
+        <strong>Duration:</strong>
+        <%= course.duration %>
+      </p>
+
+      <p>
+        <strong>Price:</strong>
+        <%= course.price %>
+      </p>
+
+      <p>
+        <strong>Start date:</strong>
+        <%= course.start_date %>
+      </p>
+
+      <p>
+        <strong>End date:</strong>
+        <%= course.end_date %>
+      </p>
+
+      <p>
+        <strong>Course type:</strong>
+        <%= course.course_type %>
+      </p>
+    </div>
+    <% if current_user.subscriptions.where(course_id: course.id).present? %>
+      <span class="btn btn-success">Subscribed</span>
+    <% else %>
+      <%= link_to "Subscribe Now", subscriptions_path(course_id: course ), data: { turbo_method: :post }, class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
